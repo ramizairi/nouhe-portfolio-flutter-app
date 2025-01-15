@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_x/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:social_media_buttons/social_media_buttons.dart';
 
 class HeaderScreen extends StatelessWidget {
   @override
@@ -77,7 +78,7 @@ class IntroductionWidget extends StatelessWidget {
         [
           " - Introduction".text.gray500.widest.sm.make(),
           10.heightBox,
-          "@googledevexpert for Flutter, Firebase, Dart & Web.\nPublic Speaker, Blogger, Entrepreneur & YouTuber.\nFounder of MTechViral."
+          "3BI student at IHEC Carthage. Passionate about coding, problem-solving, and building impactful digital solutions."
               .text
               .white
               .xl3
@@ -90,7 +91,7 @@ class IntroductionWidget extends StatelessWidget {
         ].vStack(),
         ElevatedButton(
           onPressed: () {
-            launch("https://mtechviral.com");
+            launch("https://www.linkedin.com/in/nouha-ben-nasr-a88632259");
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Coolors.accentColor,
@@ -98,7 +99,7 @@ class IntroductionWidget extends StatelessWidget {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           ),
-          child: "Visit mtechviral.com".text.make(),
+          child: "Visit My linkedin Account !".text.make(),
         ).h(50)
       ],
       alignment: MainAxisAlignment.spaceEvenly,
@@ -144,34 +145,34 @@ class PictureWidget extends StatelessWidget {
 class SocialAccounts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return [
-      Icon(
-        Icons.alternate_email, // Changed to MaterialIcons
-        color: Colors.white,
-      ).mdClick(() {
-        launch("https://twitter.com/imthepk");
-      }).make(),
-      20.widthBox,
-      Icon(
-        Icons.camera_alt, // Changed to MaterialIcons
-        color: Colors.white,
-      ).mdClick(() {
-        launch("https://instagram.com/codepur_ka_superhero");
-      }).make(),
-      20.widthBox,
-      Icon(
-        Icons.video_library, // Changed to MaterialIcons
-        color: Colors.white,
-      ).mdClick(() {
-        launch("https://youtube.com/mtechviral");
-      }).make(),
-      20.widthBox,
-      Icon(
-        Icons.code, // Changed to MaterialIcons
-        color: Colors.white,
-      ).mdClick(() {
-        launch("https://github.com/iampawan");
-      }).make()
-    ].hStack();
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          Icons.alternate_email, // Changed to MaterialIcons
+          color: Colors.white,
+        ).mdClick(() {
+          launch("mailto:nouhebennaser@gmail.com");
+        }).make(),
+        20.widthBox,
+        SocialMediaButton.linkedin(
+          url: "https://www.linkedin.com/in/nouha-ben-nasr-a88632259/",
+          size: 30,
+          color: Colors.white,
+        ),
+        20.widthBox,
+        SocialMediaButton.instagram(
+          url: "https://www.instagram.com/nouhe.bennasr/",
+          size: 30,
+          color: Colors.white,
+        ),
+        20.widthBox,
+        SocialMediaButton.github(
+          url: "https://github.com/nouhebennasr", // Replace with your GitHub
+          size: 30,
+          color: Colors.white,
+        ),
+      ],
+    );
   }
 }

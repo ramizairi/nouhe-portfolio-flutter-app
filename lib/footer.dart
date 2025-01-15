@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio_x/header.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -15,7 +14,7 @@ class FooterScreen extends StatelessWidget {
             [
               "Got a project?\nLet's talk.".text.center.white.xl2.make(),
               10.heightBox,
-              "mtechviral@gmail.com"
+              "nouhebennaser@gmail.com"
                   .text
                   .color(Coolors.accentColor)
                   .semiBold
